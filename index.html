@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bakcell Şamaxi — WiFi Giriş</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: #CC0000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .wifi-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #CC0000;
+      margin-bottom: 24px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 0 -32px 28px -32px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .tiktok-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #010101;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .tiktok-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .tiktok-logo {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .confirm-btn {
+      width: 100%;
+      background: #CC0000;
+      color: #fff;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .confirm-btn:hover {
+      background: #aa0000;
+      transform: translateY(-1px);
+    }
+
+    .confirm-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* Success screen */
+    .success {
+      display: none;
+    }
+
+    .success-icon {
+      font-size: 64px;
+      margin-bottom: 12px;
+    }
+
+    .success-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .success-sub {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #CC0000;
+      border-radius: 99px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Step 1: TikTok -->
+    <div id="step1">
+      <div class="wifi-icon">📶</div>
+      <div class="brand">Bakcell Şamaxi</div>
+      <div class="divider"></div>
+
+      <div class="title">Pulsuz WiFi üçün<br>bizi izləyin</div>
+      <div class="subtitle">TikTok səhifəmizi izlədikdən sonra<br>internetə tam giriş əldə edəcəksiniz.</div>
+
+      <a
+        class="tiktok-btn"
+        href="https://www.tiktok.com/@bakcellsamaxi?_r=1&_t=ZS-97IAei03J9o"
+        target="_blank"
+        id="tiktokLink"
+        onclick="onTikTokClick()"
+      >
+        <svg class="tiktok-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M41 10.6c-2.9-.3-5.4-1.8-7.1-4A11.6 11.6 0 0 1 32.4 3h-7v28.5a4.6 4.6 0 0 1-4.6 4c-2.5 0-4.6-2-4.6-4.6 0-2.5 2-4.5 4.6-4.5.4 0 .9.1 1.3.2V19c-.4 0-.9-.1-1.3-.1C13.2 18.9 7 25.1 7 32.8S13.2 46.5 20.8 46.5c7.5 0 13.7-6.2 13.7-13.7V18.2a21.3 21.3 0 0 0 12.5 4V15c-2.3 0-4.5-.6-6-1.7V10.6z" fill="#fff"/>
+        </svg>
+        @bakcellsamaxi — İzlə
+      </a>
+
+      <button class="confirm-btn" id="confirmBtn" disabled onclick="onConfirm()">
+        ✅ İzlədim, İnterneti Aç
+      </button>
+
+      <div class="note">
+        "İzlə" düyməsinə basdıqdan sonra<br>"İzlədim" düyməsi aktiv olacaq.
+      </div>
+    </div>
+
+    <!-- Step 2: Success -->
+    <div class="success" id="step2">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">Təşəkkürlər!</div>
+      <div class="success-sub">İnternet bağlantınız açılır...<br>Bir neçə saniyə gözləyin.</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // UAM parametrləri URL-dən oxunur
+    const params = new URLSearchParams(window.location.search);
+    const uamIP    = params.get('uamip')    || '';
+    const uamPort  = params.get('uamport')  || '3990';
+    const challenge= params.get('challenge')|| '';
+    const uamURL   = `http://${uamIP}:${uamPort}/logon`;
+
+    function onTikTokClick() {
+      // TikTok açıldıqdan 3 saniyə sonra düyməni aktiv et
+      setTimeout(() => {
+        const btn = document.getElementById('confirmBtn');
+        btn.disabled = false;
+        btn.textContent = '✅ İzlədim, İnterneti Aç';
+      }, 3000);
+    }
+
+    function onConfirm() {
+      // Step 2-ni göstər
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'block';
+
+      // Progress bar animasiyası
+      let progress = 0;
+      const fill = document.getElementById('progressFill');
+      const interval = setInterval(() => {
+        progress += 2;
+        fill.style.width = progress + '%';
+        if (progress >= 100) {
+          clearInterval(interval);
+          // Keenetic UAM-a icazə sorğusu göndər
+          if (uamIP) {
+            // Parolsuz (noauth) giriş üçün sadə redirect
+            window.location.href = uamURL + '?username=guest&password=&challenge=' + challenge;
+          }
+        }
+      }, 60);
+    }
+  </script>
+</body>
+</html>
